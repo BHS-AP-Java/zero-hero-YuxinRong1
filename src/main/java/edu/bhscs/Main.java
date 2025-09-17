@@ -1,6 +1,6 @@
 package edu.bhscs;
 public class Main {
-  public static final float MAME_OF_THIS_FLOAT = 69.42f;
+  public static final float NAME_OF_THIS_FLOAT = 69.42f;
 
   public static final char A = 'a';
   public static void main(String[] args) {
