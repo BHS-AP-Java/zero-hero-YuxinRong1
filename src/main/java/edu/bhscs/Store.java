@@ -10,6 +10,7 @@ public class Store {
     this.appearance = appearance;
     this.Location = Location;
     System.out.println(Location + "!");
+    
   }
 
   public class Cake {}
