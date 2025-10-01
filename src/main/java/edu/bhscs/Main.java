@@ -1,23 +1,32 @@
-package edu.bhscs;
-public class Main {
-  public static final float NAME_OF_THIS_FLOAT = 69.42f;
+// Yuxin
+// P2
+// Zerohero
+// 9.19.2025
 
-  public static final char A = 'a';
+// DESCP
+package edu.bhscs;
+
+public class Main {
+
+  // field or porperties, a constructor (In java something makes an instance) The method is a line
+  // of recipe.
+  String Mystring;
+  int backcake;
+
   public static void main(String[] args) {
 
-    System.out.println(A);
     String myString = pushup("Garlic");
     System.out.println(myString);
 
     Awesome Steve = new Awesome("Steve");
-    Awesome Sue = new Awesome("Sue");
-    Awesome Linda = new Awesome("L");
-    Awesome Jhon = new Awesome("With a JH,damb-ass");
+    String theGoodStuff = "chocolate";
+    Object foo = new Object();
+    new (theGoodStuff);
 
-    System.out.println( Steve.getblame() );
 
   }
-  public static String pushup(String food){
+
+  public static String pushup(String food) {
     return "sweet" + food;
   }
 }
