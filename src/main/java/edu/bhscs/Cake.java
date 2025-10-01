@@ -1,13 +1,14 @@
 package edu.bhscs;
 
 public class Cake {
+  //fields and properties
   String TheOneBestCake;
   String ingredient;
   String otherIngredient;
   Flour flour;
   int Flour;
   int weight;
-
+  String Cake;
 
   // I have to make a constructor
   public Cake(String ingredient, Flour flour) {
