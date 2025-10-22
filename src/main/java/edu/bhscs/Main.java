@@ -4,15 +4,12 @@
 // 10/9/2025
 
 /*
- * This assignment is to use java to make a cake.
+ * This assignment is to use java to make a cake. and I have to make a 2-d picture of this cake;
+ * I'd better to let it reflect at least one properties or fields
  */
 
 package edu.bhscs;
 
 public class Main {
-  public static void main(String[] args) {
-    Cake myCake = new Cake();
-    myCake.draw("--",5,12);
-    System.out.println("Hello");
-  }
+  
 }
