@@ -1,34 +1,47 @@
 package edu.bhscs;
 
 public class Cake {
-  //fields and properties
-  String TheOneBestCake;
+
   String ingredient;
   String otherIngredient;
-  Flour flour;
-  int Flour;
-  int weight;
+  String frosting;
   String Cake;
+  int height;
+  int width;
 
-  // I have to make a constructor
-  public Cake(String ingredient, Flour flour) {
+  public Cake() {}
 
-    System.out.println("baking the cake..." + ingredient);
-    this.weight = 10;
-    this.Flour = 5;
-  }
+  void draw(String icing, int x, int y) {
 
-  // To be eaten
-  public void eaten() {
-    this.weight = this.weight - 2;
-  }
+    for (int r = 0; r < width / 2; r++) {
 
-  // To be weighted
-  public int getWeight() {
-    return this.weight;
-  }
+      System.out.print(" ".repeat(width / 2 - r));
+      System.out.print("/");
+      System.out.print(icing.repeat(r * 2)); // frosting pattern
+      System.out.println("\\");
 
-  public int flour() {
-    return this.Flour;
+    }
+
+    for (int row = 0; row < height; row++) {
+      System.out.print("|");
+      for (int col = 0; col < width; col++) {
+        // Pattern: sprinkle every 3rd column, crack every 5th column
+        if (col % 3 == 0)
+          System.out.print("*");
+        else if (col % 5 == 0)
+          System.out.print("/");
+
+        else
+          System.out.print("#"); 
+      }
+
+      System.out.println("|");
+
+    }
+
+    System.out.println("=".repeat(width + 2));
+
+    System.out.println("This is your " + frosting + " cake! Enjoy! 🍰");
+
   }
 }
