@@ -17,6 +17,7 @@ public class Store {
   String Location;
   String appearance;
   int Flavor;
+  String Flour;
 
   // constuctor
   public Store(String appearance, String Location) {
@@ -29,7 +30,8 @@ public class Store {
   // Sell the cake
   Cake sellTheCake() {
     Flour myFlour = new Flour(8, 5);
-    Cake myYummieCake = new Cake(myFlour);
+
+    Cake myYummieCake = new Cake();
 
     return myYummieCake;
   }
