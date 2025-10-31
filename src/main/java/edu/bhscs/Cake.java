@@ -27,9 +27,6 @@ public class Cake {
     return name;
   }
 
-
-
-
   void draw() {
     for (int i = 1; i <= 4; i++) {
 

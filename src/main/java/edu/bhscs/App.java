@@ -17,6 +17,7 @@ public class App {
     Cake bDay = bob.bakes(5, "Yuxin");
     bDay.draw(t);
     System.out.println(bob.sayName() + " is the baker of this cake");
-    System.out.println("This cake is for "+ bDay.getName()+"'s "+ bDay.getCandle() + "th birthday");
+    System.out.println(
+        "This cake is for " + bDay.getName() + "'s " + bDay.getCandle() + "th birthday");
   }
 }

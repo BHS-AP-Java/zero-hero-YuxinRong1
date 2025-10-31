@@ -9,7 +9,6 @@ public class Baker {
     this.name = name;
   }
 
-
   Cake bakes(int candle, String customer) {
 
     return new Cake(candle, customer);
