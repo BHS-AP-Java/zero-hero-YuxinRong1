@@ -23,13 +23,6 @@ public class Table {
     this.leg = leg;
   }
 
-  public void settop(String top) {
-    this.top = top;
-  }
-
-  public void setleg(String leg) {
-    this.leg = leg;
-  }
 
   public void settop(String top) {
     this.top = top;
