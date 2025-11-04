@@ -11,15 +11,20 @@ public class Cake {
   int height;
   int width;
   String bakes;
-  int people;
+  int candle;
   String name;
 
-  public Cake(String name, int people) {
-    this.height = 5;
+  public Cake(int candle, String name) {
+    this.candle = candle;
+    this.name = name;
   }
 
-  public String saySize() {
-    return this.name;
+  public int getCandle() {
+    return candle;
+  }
+
+  public String getName() {
+    return name;
   }
 
   void draw() {
