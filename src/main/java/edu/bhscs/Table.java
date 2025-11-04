@@ -11,7 +11,7 @@ public class Table {
   public Table(int legs, int width) {
     this.legs = legs;
     this.width = width;
-    this.leg = "+";
+    this.leg = "|";
     this.top = "=";
     // THIS BIT...
     // INSIDE THE CURRLY BRACKETS.... { ... }
@@ -36,15 +36,18 @@ public class Table {
       /*things it does*/
 
     }
-    for ( int i = 0; i <this.legs; i++){
+    System.out.println();
+    for (int i = 0; i < this.legs; i++) {
       System.out.println(leg);
-        for (int j = 0; j < this.width-1; j++){
-          System.out.println(" ");
-        }
-        System.out.println(leg);
 
-    }
+      for (int j = 0; j < this.width - 1; j++) {
+        System.out.print( " " );
+      }
+
+   }
+
     System.out.println();
     System.out.println("The cake is put on a table with " + this.legs + " legs");
-  }
+}
+
 }
