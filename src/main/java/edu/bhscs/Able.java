@@ -1,11 +1,11 @@
 package edu.bhscs;
 
-public class Table {
+public class Able {
 
-  private int width;
-  private int height;
+  private int width = 9;
+  private int height = 5;
 
-  public Table(int width, int height) {
+  public Able(int width, int height) {
     this.width = width;
     this.height = height;
   }
@@ -15,17 +15,20 @@ public class Table {
   }
 
   public void draw() {
-    // 桌面
-    for (int i = 0; i < width; i++)
+
+    // tabletop
+    for (int i = 0; i < width; i++) {
       System.out.print("=");
+    }
     System.out.println();
 
-    // 桌腿
+    // legs
     for (int h = 0; h < height; h++) {
       System.out.print("|");
-      for (int i = 0; i < width - 2; i++)
-        System.out.print(" ");
+      for (int i = 0; i < width - 2; i++) System.out.print(" ");
       System.out.println("|");
     }
+
+    System.out.println();
   }
 }

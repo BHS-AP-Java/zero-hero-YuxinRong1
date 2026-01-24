@@ -13,8 +13,10 @@ public class App {
     // this is the workspace for today!!!
 
     Baker bob = new Baker("Shay");
-    Table t = new Table(10, 20);
-    Cake bDay = bob.bakes(5, "Yuxin");
+    Table t = new Table(4, 2);
+    Cake bDay = bob.bakes(6, " Yuxin ");
+    bDay.setHeight(8);
+    bDay.setFrosting("&");
     bDay.draw(t);
     System.out.println(bob.sayName() + " is the baker of this cake");
     System.out.println(
