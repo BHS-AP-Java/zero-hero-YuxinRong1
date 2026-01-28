@@ -1,65 +1,87 @@
+
+
 package edu.bhscs;
+
 
 public class Cake {
 
-  private int candle; // 蜡烛数量
-  private String name; // 蛋糕名字
-  private int width; // 蛋糕宽度
-  private int height; // 蛋糕高度
-  private String frosting; // 装饰
 
-  // ===== Constructor 保持兼容 Baker.bakes =====
+  private int candle;
+  private String name;
+  private int width;
+  private int height;
+  private String frosting;
+
+
+  // Constructor
   public Cake(int candle, String name) {
     this.candle = candle;
     this.name = name;
-    this.height = 5; // 默认高度
-    this.frosting = "#"; // 默认装饰
+    this.height = 5;
+    this.frosting = "#";
     this.width = Math.max(name.length() + 6, candle * 3);
   }
 
-  // ===== 可调高度和 frosting =====
+
+  // ===== Setters =====
   public void setHeight(int h) {
     this.height = h;
   }
+
 
   public void setFrosting(String f) {
     this.frosting = (f.length() == 0) ? "#" : f;
   }
 
+
   public int getCandle() {
     return candle;
   }
+
 
   public String getName() {
     return name;
   }
 
+
   public int getWidth() {
     return width;
   }
+
 
   public int getHeight() {
     return height;
   }
 
+
   // ===== Draw cake on table =====
   public void draw(Table t) {
-    int tableWidth = t.getWidth();
-    int offset; // 蛋糕绘制左边起点
 
-    // ===== 考虑两种情况 =====
-    if (tableWidth >= width) {
-      // 桌子比蛋糕宽 → 居中蛋糕
-      offset = (tableWidth - width) / 2;
+
+    int tableWidth = t.getWidth();
+    int cakeWidth = width;
+
+
+    int cakeOffset = 0;
+    int tableOffset = 0;
+
+
+    // here is two situations
+    if (tableWidth >= cakeWidth) {
+      // if the table is wider than the cake
+      cakeOffset = (tableWidth - cakeWidth) / 2;
+      tableOffset = 0;
     } else {
-      // 蛋糕比桌子宽 → 蛋糕从最左开始画，桌子底部对齐
-      offset = 0;
+      // if the cake is wider than the table
+      cakeOffset = 0;
+      tableOffset = (cakeWidth - tableWidth) / 2;
     }
 
-    // ===== 顶部蜡烛 =====
-    for (int s = 0; s < offset; s++)
+
+    // the candles from the top
+    for (int s = 0; s < cakeOffset; s++)
       System.out.print(" ");
-    int candleSpace = width - candle;
+    int candleSpace = cakeWidth - candle;
     int leftSpace = candleSpace / 2;
     for (int i = 0; i < leftSpace; i++)
       System.out.print(" ");
@@ -67,22 +89,25 @@ public class Cake {
       System.out.print("|");
     System.out.println();
 
-    // ===== 顶部蛋糕边 =====
-    for (int s = 0; s < offset; s++)
+
+    // the top of the cake
+    for (int s = 0; s < cakeOffset; s++)
       System.out.print(" ");
-    for (int i = 0; i < width; i++)
+    for (int i = 0; i < cakeWidth; i++)
       System.out.print("=");
     System.out.println();
 
-    // ===== 蛋糕主体 =====
+
+    // the main part of the cake
     for (int h = 0; h < height; h++) {
-      for (int s = 0; s < offset; s++)
+      for (int s = 0; s < cakeOffset; s++)
         System.out.print(" ");
       System.out.print("|");
 
+
       if (h == height / 2) {
-        // 中间显示名字
-        int space = width - name.length() - 2;
+        // the name shows in the middle and the whole cake you can see
+        int space = cakeWidth - name.length() - 2;
         int left = space / 2;
         int right = space - left;
         for (int i = 0; i < left; i++)
@@ -91,22 +116,25 @@ public class Cake {
         for (int i = 0; i < right; i++)
           System.out.print(frosting.charAt(0));
       } else {
-        // 普通蛋糕层
-        for (int i = 0; i < width - 2; i++)
+        for (int i = 0; i < cakeWidth - 2; i++)
           System.out.print(frosting.charAt(0));
       }
+
 
       System.out.println("|");
     }
 
-    // ===== 底部 =====
-    for (int s = 0; s < offset; s++)
+
+    // botton part of the cake
+    for (int s = 0; s < cakeOffset; s++)
       System.out.print(" ");
-    for (int i = 0; i < width; i++)
+    for (int i = 0; i < cakeWidth; i++)
       System.out.print("-");
     System.out.println();
 
-    // ===== 绘制桌子 =====
-    t.draw();
+
+    // draw the table
+    t.draw(tableOffset);
   }
 }
+

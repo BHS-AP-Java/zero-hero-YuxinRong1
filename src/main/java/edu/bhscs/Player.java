@@ -1,9 +1,17 @@
 package edu.bhscs;
 
-// fields and properties
+import java.util.Scanner;
+
 public class Player {
 
-  public static String App;
-  // Fields and properties;
+  public Player(String unused) {}
 
+  public String giveAnswer(String question) {
+    System.out.println(question);
+    return ScannerHolder.SCANNER.nextLine();
+  }
+
+  private static class ScannerHolder {
+    private static final Scanner SCANNER = new Scanner(System.in);
+  }
 }
